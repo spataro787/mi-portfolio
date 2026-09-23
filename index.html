@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Agustín Spataro — Desarrollador Full Stack</title>
+    <meta
+      name="description"
+      content="Portfolio de Agustín Spataro. Desarrollo full stack e inteligencia artificial."
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="chat.js" defer></script>
+  </head>
+  <button
+  id="chat-toggle"
+  class="chat-toggle"
+  type="button"
+  aria-controls="chat-panel"
+  aria-expanded="false"
+>
+  Preguntale a mi asistente
+</button>
+
+<aside id="chat-panel" class="chat-panel" aria-label="Asistente de Agustín" hidden>
+  <div class="chat-header">
+    <div>
+      <strong>Asistente de Agustín</strong>
+      <p>Preguntame sobre su experiencia y proyectos</p>
+    </div>
+
+    <button id="chat-close" class="chat-close" type="button" aria-label="Cerrar asistente">
+      ×
+    </button>
+  </div>
+
+  <div
+    id="chat-messages"
+    class="chat-messages"
+    role="log"
+    aria-live="polite"
+    aria-relevant="additions"
+  >
+    <p class="chat-message assistant">
+      ¡Hoy soy Agustin Spataro! En que te úedo ayudar?
+    </p>
+  </div>
+
+  <form id="chat-form" class="chat-form">
+    <label class="sr-only" for="chat-input">Tu pregunta</label>
+    <input
+      id="chat-input"
+      name="message"
+      type="text"
+      maxlength="500"
+      placeholder="Escribí tu pregunta..."
+      autocomplete="off"
+      required
+    />
+    <button id="chat-send" type="submit">Enviar</button>
+  </form>
+</aside>
+
+  <body>
+    <header>
+      <div class="wrap">
+        <nav>
+          <a class="logo" href="#inicio">Agustín<span>.</span></a>
+
+          <div class="navlinks">
+            <a href="#sobre-mi">Sobre mí</a>
+            <a href="#proyectos">Proyectos</a>
+            <a href="#contacto">Contacto</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <div class="hero" id="inicio">
+        <div>
+          <div class="eyebrow">Desarrollo web · IA</div>
+
+          <h1>Hola, soy<br /><span class="accent">Agustín Spataro.</span></h1>
+
+          <p>
+            Desarrollador Full Stack interesado en crear productos útiles,
+            interfaces claras y soluciones que integren inteligencia artificial.
+          </p>
+
+          <div class="actions">
+  <a class="button" href="mailto:spataro787@gmail.com">
+    Correo electronico ↗
+  </a>
+
+  <a class="button secondary" href="tel:+5493512309202">
+    Numero de contacto: +54 9 351 230-9202
+  </a>
+
+  <a
+    class="button secondary"
+    href="https://www.linkedin.com/in/agustin-spataro-dev/"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    LinkedIn ↗
+  </a>
+            <a
+              class="button secondary"
+              href="https://github.com/spataro787"
+              target="_blank"
+              rel="noopener noreferrer"
+            >GitHub ↗</a>
+          </div>
+        </div>
+
+        <div class="hero-photo">
+  <img src="img/agustin.png" alt="Foto de Agustín Spataro" />
+</div>
+      </div>
+
+<section id="sobre-mi">
+  <div class="section-label"></div>
+  <h2></h2>
+
+  <p class="intro">
+    Soy Agustín Spataro, desarrollador Full Stack. Me gusta entender el
+    problema antes de empezar a programar, aprender herramientas nuevas y
+    trabajar con otras personas para convertir una idea en algo que se pueda
+    usar. En mis proyectos busco combinar una interfaz clara con código
+    ordenado y pruebas que ayuden a mejorar el resultado.
+  </p>
+
+  <p class="intro">
+    Quiero seguir creciendo en desarrollo web y profundizar en inteligencia
+    artificial aplicada. Mi objetivo es participar en equipos donde pueda
+    aprender de otros profesionales, asumir desafíos cada vez más grandes y
+    construir productos útiles para personas reales.
+  </p>
+</section>
+
+      <section id="proyectos">
+  <div class="section-label">02 / Trabajo</div>
+  <h2>Proyectos seleccionados</h2>
+
+  <div class="grid">
+    <article class="card">
+      <span class="number">01 · Trabajo en equipo</span>
+      <h3>NomaPay</h3>
+      <p>
+        Billetera virtual simulada para viajeros y nómadas digitales.
+        Desarrollé funcionalidades del frontend con React y TypeScript:
+        billetera, transferencias, conversión de monedas y pruebas.
+      </p>
+      <div class="project-links">
+        <a
+          href="https://noma-pay-frontend.vercel.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Visitar aplicación ↗</a>
+        <a
+          href="https://github.com/nomapayapp-collab/NomaPay_Frontend"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Ver código ↗</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <span class="number">02 · API REST</span>
+      <h3>MiniBlog API</h3>
+      <p>
+        API para gestionar autores y publicaciones, desarrollada con Node.js,
+        Express y PostgreSQL. Incluye validaciones, documentación OpenAPI
+        y pruebas automatizadas.
+      </p>
+      <div class="project-links">
+        <a
+          href="https://github.com/spataro787/miniblog-api"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Ver proyecto y documentación ↗</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <span class="number">03 · Inteligencia artificial</span>
+      <h3>Fantasy AI Chat</h3>
+      <p>
+        Aplicación para conversar con personajes de ficción mediante
+        inteligencia artificial. Desarrollada como SPA con funciones
+        serverless.
+      </p>
+      <div class="project-links">
+        <a
+          href="https://proyecto-m3-spataro-agustin-fs-ft-7.vercel.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Probar aplicación ↗</a>
+        <a
+          href="https://github.com/spataro787/Proyecto-M3-Spataro-Agustin-FS-FT-74"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Ver código ↗</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <span class="number">04 · Herramientas para IA</span>
+      <h3>GitHub MCP Server</h3>
+      <p>
+        Servidor MCP construido con Node.js y TypeScript para que un agente
+        de IA interactúe con repositorios y tareas de GitHub.
+      </p>
+      <div class="project-links">
+        <a
+          href="https://github.com/spataro787/Proyecto-M5--Agustin-Spataro"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Ver proyecto y documentación ↗</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <span class="number">05 · Aplicación web</span>
+      <h3>Colorfly Studio</h3>
+      <p>
+        Generador interactivo de paletas de colores. Permite bloquear
+        colores, copiar códigos y guardar combinaciones favoritas.
+      </p>
+      <div class="project-links">
+        <a
+          href="https://spataro787.github.io/colorfly-studio/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Visitar aplicación ↗</a>
+        <a
+          href="https://github.com/spataro787/colorfly-studio"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Ver código ↗</a>
+      </div>
+    </article>
+  </div>
+</section>
