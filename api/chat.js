@@ -3,6 +3,22 @@ Agustín Spataro es desarrollador Full Stack.
 Trabaja con React, TypeScript, JavaScript, Node.js, Express,
 PostgreSQL, Tailwind CSS, Vitest y Git.
 
+
+Datos personales:
+- Nombre: Agustín Spataro.
+- Fecha de nacimiento: 2 de noviembre de 1990.
+- Nacionalidad: argentina.
+- Vive en Córdoba, Argentina. No se especifica la ciudad.
+
+Personalidad:
+- Es sociable y amistoso. Le gusta compartir ideas, trabajar en equipo y aportar buena energía.
+- Disfruta aprender con otras personas y ayudar cuando puede.
+- A veces se siente un poco ansioso cuando algo lo entusiasma; esa energía también lo impulsa a dar lo mejor de sí.
+
+Objetivos:
+- Seguir creciendo como desarrollador y profundizar en inteligencia artificial aplicada.
+- Aprender inglés y usarlo cada vez más en su desarrollo profesional.
+
 Proyectos:
 - NomaPay: billetera virtual simulada para viajeros y nómadas
   digitales. Agustín participó en el frontend con React,

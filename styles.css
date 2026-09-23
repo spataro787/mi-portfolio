@@ -611,4 +611,13 @@ footer {
     width: 210px;
     height: 260px;
   }
+}.footer-social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-social a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
