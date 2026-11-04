@@ -1,319 +1,752 @@
 <!doctype html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="Portfolio de Agustín Spataro: desarrollo Full Stack, proyectos web e inteligencia artificial."
-    />
-    <title>Agustín Spataro — Desarrollador Full Stack</title>
-    <link rel="stylesheet" href="styles.css" />
-    <script src="chat.js" defer></script>
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <body>
-    <header>
-      <div class="wrap">
-        <nav aria-label="Navegación principal">
-          <a class="logo" href="#inicio">Agustín<span>.</span></a>
+  <meta
+    name="description"
+    content="Portfolio de Agustín Spataro: Backend & Full Stack Developer especializado en Node.js, TypeScript, PostgreSQL e IA."
+  />
 
-          <div class="navlinks">
-            <a href="#sobre-mi">Sobre mí</a>
-            <a href="#proyectos">Proyectos</a>
-            <a href="#contacto">Contacto</a>
-          </div>
-        </nav>
-      </div>
-    </header>
+  <meta name="theme-color" content="#10131b" />
 
-    <main class="wrap">
-      <div class="hero" id="inicio">
-        <div>
-          <div class="eyebrow">Desarrollo web · IA</div>
+  <title>Agustín Spataro — Backend & Full Stack Developer</title>
 
-          <h1>Hola, soy<br /><span class="accent">Agustín Spataro.</span></h1>
+  <link rel="stylesheet" href="styles.css" />
 
-          <p>
-            Desarrollador Full Stack interesado en crear productos útiles,
-            interfaces claras y soluciones que integren inteligencia artificial.
-          </p>
+  <!-- Aplicar el tema guardado antes de mostrar la página -->
+  <script>
+    (() => {
+      try {
+        const theme = localStorage.getItem("theme");
 
-          <div class="actions">
-            <a class="button" href="#proyectos">Ver proyectos</a>
+        if (theme === "light") {
+          document.documentElement.classList.add("light-mode");
+        } else {
+          document.documentElement.classList.remove("light-mode");
+        }
+      } catch (error) {
+        console.warn("No se pudo recuperar el tema guardado.");
+      }
+    })();
+  </script>
+</head>
 
-            <a
-              class="button secondary"
-              href="https://www.linkedin.com/in/agustin-spataro-dev/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >LinkedIn ↗</a>
+<body>
 
-            <a
-              class="button secondary"
-              href="https://github.com/spataro787"
-              target="_blank"
-              rel="noopener noreferrer"
-            >GitHub ↗</a>
-          </div>
+  <!-- HEADER / NAVEGACIÓN -->
+  <header>
+    <div class="wrap">
+      <nav aria-label="Navegación principal">
+
+        <a class="logo" href="#inicio" aria-label="Inicio">
+          <span>AS</span>
+        </a>
+
+        <div class="navlinks">
+          <a href="#sobre-mi">Sobre mí</a>
+          <a href="#proyectos">Proyectos</a>
+          <a href="#tecnologias">Skills & Formación</a>
+          <a href="#contacto">Contacto</a>
+
+          <button
+            id="theme-toggle"
+            class="theme-toggle-btn"
+            type="button"
+            aria-label="Cambiar a modo claro"
+            aria-pressed="false"
+            title="Cambiar tema"
+          >
+            ☀️
+          </button>
         </div>
 
-        <div class="hero-photo">
-          <img src="img/agustin.png" alt="Retrato de Agustín Spataro" />
+      </nav>
+    </div>
+  </header>
+
+
+  <main class="wrap">
+
+    <!-- HERO / PRESENTACIÓN -->
+    <div class="hero" id="inicio">
+
+      <div>
+
+        <div class="status-badge">
+          <span class="status-dot">🟢</span>
+          Disponible para nuevas oportunidades laborales (Backend / Full Stack)
         </div>
-      </div>
 
-      <section id="sobre-mi">
-        <div class="section-label">01 / Perfil</div>
-        <h2>Sobre mí</h2>
+        <div class="eyebrow">
+          Backend & Full Stack Developer | Node.js · TypeScript · PostgreSQL · IA
+        </div>
 
-        <p class="intro">
-          Soy Agustín Spataro, desarrollador Full Stack. Me gusta entender el
-          problema antes de empezar a programar, aprender herramientas nuevas y
-          trabajar con otras personas para convertir una idea en algo que se
-          pueda usar. En mis proyectos busco combinar una interfaz clara con
-          código ordenado y pruebas que ayuden a mejorar el resultado.
+        <h1>
+          Hola, soy<br />
+          <span class="accent">Agustín Spataro.</span>
+        </h1>
+
+        <p>
+          Desarrollador Full Stack graduado en Henry con fuerte orientación
+          al Backend e integración de Inteligencia Artificial. Especializado
+          en construir APIs REST robustas, servidores MCP para agentes de IA,
+          pruebas automatizadas con Vitest y despliegues eficientes en la nube.
         </p>
 
-        <p class="intro">
-          Quiero seguir creciendo en desarrollo web y profundizar en
-          inteligencia artificial aplicada. Mi objetivo es participar en
-          equipos donde pueda aprender de otros profesionales, asumir desafíos
-          cada vez más grandes y construir productos útiles para personas
-          reales.
-        </p>
-      </section>
+        <div class="actions">
 
-      <section id="proyectos">
-        <div class="section-label">02 / Trabajo</div>
-        <h2>Proyectos seleccionados</h2>
+          <a
+            class="button"
+            href="https://drive.google.com/file/d/1jhQbhLlQkaGRPX-4KNaUtHHddc_22LnX/preview"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Ver CV ↗
+          </a>
 
-        <div class="grid">
-          <article class="card">
-            <span class="number">01 · Trabajo en equipo</span>
-            <h3>NomaPay</h3>
-            <p>
-              Billetera virtual simulada para viajeros y nómadas digitales.
-              Desarrollé funcionalidades del frontend con React y TypeScript:
-              billetera, transferencias, conversión de monedas y pruebas.
-            </p>
-            <div class="project-links">
-              <a
-                href="https://noma-pay-frontend.vercel.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >Visitar aplicación ↗</a>
-              <a
-                href="https://github.com/nomapayapp-collab/NomaPay_Frontend"
-                target="_blank"
-                rel="noopener noreferrer"
-              >Ver código ↗</a>
-            </div>
-          </article>
+          <a class="button secondary" href="#proyectos">
+            Ver proyectos
+          </a>
 
-          <article class="card">
-            <span class="number">02 · API REST</span>
-            <h3>MiniBlog API</h3>
-            <p>
-              API para gestionar autores y publicaciones, desarrollada con
-              Node.js, Express y PostgreSQL. Incluye validaciones,
-              documentación OpenAPI y pruebas automatizadas.
-            </p>
-            <div class="project-links">
-              <a
-                href="https://github.com/spataro787/miniblog-api"
-                target="_blank"
-                rel="noopener noreferrer"
-              >Ver proyecto y documentación ↗</a>
-            </div>
-          </article>
-
-          <article class="card">
-            <span class="number">03 · Inteligencia artificial</span>
-            <h3>Fantasy AI Chat</h3>
-            <p>
-              Aplicación para conversar con personajes de ficción mediante
-              inteligencia artificial. Desarrollada como SPA con funciones
-              serverless.
-            </p>
-            <div class="project-links">
-              <a
-                href="https://proyecto-m3-spataro-agustin-fs-ft-7.vercel.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >Probar aplicación ↗</a>
-              <a
-                href="https://github.com/spataro787/Proyecto-M3-Spataro-Agustin-FS-FT-74"
-                target="_blank"
-                rel="noopener noreferrer"
-              >Ver código ↗</a>
-            </div>
-          </article>
-
-          <article class="card">
-            <span class="number">04 · Herramientas para IA</span>
-            <h3>GitHub MCP Server</h3>
-            <p>
-              Servidor MCP construido con Node.js y TypeScript para que un
-              agente de IA interactúe con repositorios y tareas de GitHub.
-            </p>
-            <div class="project-links">
-              <a
-                href="https://github.com/spataro787/Proyecto-M5--Agustin-Spataro"
-                target="_blank"
-                rel="noopener noreferrer"
-              >Ver proyecto y documentación ↗</a>
-            </div>
-          </article>
-
-          <article class="card">
-            <span class="number">05 · Aplicación web</span>
-            <h3>Colorfly Studio</h3>
-            <p>
-              Generador interactivo de paletas de colores. Permite bloquear
-              colores, copiar códigos y guardar combinaciones favoritas.
-            </p>
-            <div class="project-links">
-              <a
-                href="https://spataro787.github.io/colorfly-studio/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >Visitar aplicación ↗</a>
-              <a
-                href="https://github.com/spataro787/colorfly-studio"
-                target="_blank"
-                rel="noopener noreferrer"
-              >Ver código ↗</a>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section id="tecnologias">
-        <div class="section-label">03 / Tecnologías</div>
-        <h2>Herramientas que uso</h2>
-
-        <div class="tags">
-          <span class="tag">React</span>
-          <span class="tag">TypeScript</span>
-          <span class="tag">JavaScript</span>
-          <span class="tag">Node.js</span>
-          <span class="tag">Express</span>
-          <span class="tag">PostgreSQL</span>
-          <span class="tag">Tailwind CSS</span>
-          <span class="tag">Vitest</span>
-          <span class="tag">Git & GitHub</span>
-          <span class="tag">IA aplicada</span>
-        </div>
-      </section>
-
-      <section id="contacto">
-        <div class="contact">
-          <div class="section-label">04 / Contacto</div>
-          <h2>Conectemos</h2>
-
-          <p>
-            Si querés conocer mi trabajo o conversar sobre una oportunidad,
-            podés contactarme por correo, teléfono o LinkedIn.
-          </p>
-
-          <div class="actions">
-            <a class="button" href="mailto:spataro787@gmail.com">
-              Enviarme un correo ↗
-            </a>
-
-            <a class="button secondary" href="tel:+5493512309202">
-              Llamarme: +54 9 351 230-9202
-            </a>
-
-            <a
-              class="button secondary"
-              href="https://www.linkedin.com/in/agustin-spataro-dev/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >LinkedIn ↗</a>
-
-            <a
-              class="button secondary"
-              href="https://github.com/spataro787"
-              target="_blank"
-              rel="noopener noreferrer"
-            >GitHub ↗</a>
-          </div>
-        </div>
-      </section>
-    </main>
-
-  <footer class="wrap">
-  <span>© 2026 Agustín Spataro</span>
-
-  <div class="footer-social">
-    <a href="https://www.instagram.com/spataroagustin" target="_blank" rel="@spataroagustin">
-      Instagram ↗
-    </a>
-    <a href="https://www.facebook.com/agustin.spataro" target="_blank" rel="agustin.spataro">
-      Facebook ↗
-    </a>
-  </div>
-</footer>
-    <button
-      id="chat-toggle"
-      class="chat-toggle"
-      type="button"
-      aria-controls="chat-panel"
-      aria-expanded="false"
+         <!-- LINKEDIN -->
+  <a
+    class="button secondary"
+    href="https://www.linkedin.com/in/agustin-spataro-dev/"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Perfil de LinkedIn"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden="true"
     >
-      Preguntale a mi asistente
-    </button>
+      <path d="M20.45 2H3.55C2.69 2 2 2.68 2 3.52v16.96c0 .84.69 1.52 1.55 1.52h16.9c.86 0 1.55-.68 1.55-1.52V3.52c0-.84-.69-1.52-1.55-1.52ZM8.08 18.34H5.13V9.01h2.95v9.33ZM6.6 7.74a1.71 1.71 0 1 1 0-3.42 1.71 1.71 0 0 1 0 3.42Zm11.74 10.6h-2.94v-4.54c0-1.08-.02-2.47-1.5-2.47-1.5 0-1.73 1.17-1.73 2.39v4.62H9.22V9.01h2.83v1.27h.04c.39-.73 1.36-1.5 2.8-1.5 2.99 0 3.55 1.97 3.55 4.53v5.03Z"/>
+    </svg>
+    
+  </a>
 
-    <aside
-      id="chat-panel"
-      class="chat-panel"
-      aria-label="Asistente de Agustín"
-      hidden
+
+  <!-- GITHUB -->
+  <a
+    class="button secondary"
+    href="https://github.com/spataro787"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Perfil de GitHub"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden="true"
     >
-      <div class="chat-header">
-        <div>
-          <strong>Asistente de Agustín</strong>
-          <p>Consultá sobre sus proyectos y experiencia</p>
+      <path d="M12 .8a11.2 11.2 0 0 0-3.54 21.83c.56.1.77-.24.77-.54v-2.1c-3.14.68-3.8-1.33-3.8-1.33-.5-1.28-1.22-1.62-1.22-1.62-1.02-.7.08-.69.08-.69 1.13.08 1.72 1.16 1.72 1.16 1 .1.77 2.06 3.04 1.48.1-.72.4-1.21.7-1.49-2.5-.28-5.13-1.25-5.13-5.56 0-1.23.44-2.23 1.16-3.02-.12-.28-.5-1.43.11-2.98 0 0 .95-.3 3.08 1.15a10.7 10.7 0 0 1 5.6 0c2.13-1.45 3.08-1.15 3.08-1.15.61 1.55.23 2.7.11 2.98.72.79 1.16 1.79 1.16 3.02 0 4.32-2.63 5.28-5.14 5.56.4.35.75 1.03.75 2.08v3.09c0 .3.2.65.78.54A11.2 11.2 0 0 0 12 .8Z"/>
+    </svg>
+     
+  </a>
+
+
         </div>
-
-        <button
-          id="chat-close"
-          class="chat-close"
-          type="button"
-          aria-label="Cerrar asistente"
-        >
-          ×
-        </button>
       </div>
 
-      <div
-        id="chat-messages"
-        class="chat-messages"
-        role="log"
-        aria-live="polite"
-        aria-relevant="additions"
-      >
-        <p class="chat-message assistant">
-          ¡Hola! Soy el asistente del portfolio de Agustín. Podés preguntarme
-          sobre sus proyectos y experiencia.
-        </p>
-      </div>
-
-      <form id="chat-form" class="chat-form">
-        <label class="sr-only" for="chat-input">Tu pregunta</label>
-        <input
-          id="chat-input"
-          name="message"
-          type="text"
-          maxlength="500"
-          placeholder="Escribí tu pregunta..."
-          autocomplete="off"
-          required
+      <div class="hero-photo">
+        <img
+          src="img/agustin.png"
+          alt="Retrato de Agustín Spataro"
         />
-        <button id="chat-send" type="submit">Enviar</button>
-      </form>
-    </aside>
-  </body>
+      </div>
+
+    </div>
+
+
+    <!-- SOBRE MÍ -->
+    <section id="sobre-mi">
+
+      <div class="section-label">01 / Perfil</div>
+      <h2>Sobre mí</h2>
+
+      <div class="about-grid">
+
+        <div class="about-block">
+          <h3>Enfoque Técnico Backend</h3>
+          <p>
+            Diseño e implemento APIs RESTful eficientes y arquitecturas
+            modulares con Node.js, Express y TypeScript. Garantizo la
+            integridad, escalabilidad y eficiencia en el modelado de
+            bases de datos relacionales con PostgreSQL.
+          </p>
+        </div>
+
+        <div class="about-block">
+          <h3>Diferenciador en Integración de IA</h3>
+          <p>
+            Desarrollo de forma activa integraciones en el ecosistema
+            de agentes utilizando el
+            <strong>Model Context Protocol (MCP)</strong> con el SDK
+            oficial y Octokit, permitiendo a modelos de lenguaje (LLMs)
+            ejecutar acciones y conectarse de forma segura con entornos
+            externos como GitHub.
+          </p>
+        </div>
+
+        <div class="about-block">
+          <h3>Calidad, Pruebas y Metodología</h3>
+          <p>
+            Priorizo el desarrollo de software seguro y mantenible mediante
+            pruebas unitarias e integrales (Vitest, Supertest, Testing
+            Library), validación estricta de datos (Zod), documentación
+            profesional bajo el estándar OpenAPI/Swagger y control de
+            versiones colaborativo.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- PROYECTOS -->
+    <section id="proyectos">
+
+      <div class="section-label">02 / Trabajo</div>
+      <h2>Proyectos seleccionados</h2>
+
+      <div class="grid">
+
+        <!-- PROYECTO 1 -->
+        <article class="card featured">
+
+          <div class="card-badges">
+            <span class="badge">AI Tooling</span>
+            <span class="badge">Node.js</span>
+            <span class="badge">TypeScript</span>
+            <span class="badge">MCP SDK</span>
+            <span class="badge">Octokit</span>
+            <span class="badge">Vitest</span>
+          </div>
+
+          <h3>GitHub MCP Server</h3>
+
+          <p>
+            Servidor MCP que conecta agentes de IA con operaciones en
+            la API de GitHub. Permite realizar acciones sobre repositorios,
+            commits e issues de manera autónoma. Cuenta con validaciones
+            estrictas con Zod y verificación con 17 pruebas automatizadas.
+          </p>
+
+          <div class="project-links">
+            <a
+              href="https://github.com/spataro787/Proyecto-M5--Agustin-Spataro"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ver Proyecto y Código ↗
+            </a>
+          </div>
+
+        </article>
+
+
+        <!-- PROYECTO 2 -->
+        <article class="card featured">
+
+          <div class="card-badges">
+            <span class="badge">Backend REST API</span>
+            <span class="badge">Node.js</span>
+            <span class="badge">Express</span>
+            <span class="badge">PostgreSQL</span>
+            <span class="badge">Vitest / Supertest</span>
+            <span class="badge">Swagger</span>
+          </div>
+
+          <h3>MiniBlog API</h3>
+
+          <p>
+            API RESTful para la gestión de blogs con operaciones CRUD
+            completas, validación estricta de datos, documentación
+            interactiva en Swagger y suite de pruebas integrales
+            automatizadas. Persistencia de datos en PostgreSQL y
+            lista para despliegue en Railway.
+          </p>
+
+          <div class="project-links">
+            <a
+              href="https://github.com/spataro787/miniblog-api"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ver Código y Documentación ↗
+            </a>
+          </div>
+
+        </article>
+
+
+        <!-- PROYECTO 3 -->
+        <article class="card">
+
+          <div class="card-badges">
+            <span class="badge">Team Project</span>
+            <span class="badge">React</span>
+            <span class="badge">TypeScript</span>
+            <span class="badge">Tailwind CSS</span>
+            <span class="badge">Vitest</span>
+          </div>
+
+          <h3>NomaPay</h3>
+
+          <p>
+            Billetera virtual colaborativa para nómadas digitales y viajeros.
+            Desarrollé funcionalidades frontend clave como autenticación,
+            billeteras multimoneda, transferencias, conversión de divisas,
+            historial de transacciones e integración con asistente de IA.
+          </p>
+
+          <div class="project-links">
+
+            <a
+              href="https://noma-pay-frontend.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ver Demo Live ↗
+            </a>
+
+            <a
+              href="https://github.com/nomapayapp-collab/NomaPay_Frontend"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ver Código ↗
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- PROYECTO 4 -->
+        <article class="card">
+
+          <div class="card-badges">
+            <span class="badge">Full Stack</span>
+            <span class="badge">React</span>
+            <span class="badge">Gemini API</span>
+            <span class="badge">Serverless</span>
+            <span class="badge">Vercel</span>
+          </div>
+
+          <h3>Chat Gandalf (Fantasy AI Chat)</h3>
+
+          <p>
+            Aplicación web interactiva basada en IA para mantener
+            conversaciones fluidas con personajes temáticos en tiempo real.
+            Implementa funciones serverless en Vercel para una integración
+            limpia y segura con las APIs de Gemini.
+          </p>
+
+          <div class="project-links">
+
+            <a
+              href="https://proyecto-m3-spataro-agustin-fs-ft-7.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Probar Aplicación ↗
+            </a>
+
+            <a
+              href="https://github.com/spataro787/Proyecto-M3-Spataro-Agustin-FS-FT-74"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ver Código ↗
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- PROYECTO 5 -->
+        <article class="card">
+
+          <div class="card-badges">
+            <span class="badge">Frontend Utility</span>
+            <span class="badge">JavaScript</span>
+            <span class="badge">HTML5 / CSS3</span>
+          </div>
+
+          <h3>Colorfly Studio</h3>
+
+          <p>
+            Herramienta web interactiva para diseñadores y desarrolladores
+            orientada a la generación, análisis y previsualización ágil
+            de paletas de colores responsive.
+          </p>
+
+          <div class="project-links">
+
+            <a
+              href="https://spataro787.github.io/colorfly-studio/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Visitar Aplicación ↗
+            </a>
+
+            <a
+              href="https://github.com/spataro787/colorfly-studio"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ver Código ↗
+            </a>
+
+          </div>
+
+        </article>
+
+      </div>
+    </section>
+
+
+    <!-- SKILLS Y FORMACIÓN -->
+    <section id="tecnologias">
+
+      <div class="section-label">03 / Competencias</div>
+      <h2>Herramientas y Formación</h2>
+
+      <div class="skills-columns">
+
+        <div class="skills-group">
+          <h3>Backend & Bases de Datos</h3>
+          <div class="tags">
+            <span class="tag">Node.js</span>
+            <span class="tag">Express</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">APIs REST</span>
+            <span class="tag">SQL</span>
+            <span class="tag">Zod</span>
+          </div>
+        </div>
+
+        <div class="skills-group">
+          <h3>Frontend & Lenguajes</h3>
+          <div class="tags">
+            <span class="tag">TypeScript</span>
+            <span class="tag">JavaScript (ES6+)</span>
+            <span class="tag">React</span>
+            <span class="tag">Vite</span>
+            <span class="tag">Tailwind CSS</span>
+            <span class="tag">HTML5 / CSS3</span>
+          </div>
+        </div>
+
+        <div class="skills-group">
+          <h3>Calidad, IA & DevTools</h3>
+          <div class="tags">
+            <span class="tag">MCP (Model Context Protocol)</span>
+            <span class="tag badge-ibm">IBM AI Explorer Cert.</span>
+            <span class="tag">Vitest / Supertest</span>
+            <span class="tag">Swagger / OpenAPI</span>
+            <span class="tag">Git & GitHub</span>
+            <span class="tag">Vercel & Railway</span>
+          </div>
+        </div>
+
+        <div class="skills-group">
+          <h3>En Aprendizaje Continuo</h3>
+          <div class="tags tag-learning">
+            <span class="tag">Docker</span>
+            <span class="tag">Prisma ORM</span>
+            <span class="tag">CI/CD (GitHub Actions)</span>
+          </div>
+        </div>
+
+      </div>
+
+
+      <!-- EDUCACIÓN Y CERTIFICACIONES -->
+      <h3 class="education-heading">
+        Educación & Certificaciones
+      </h3>
+
+      <div class="about-grid education-grid">
+
+        <div class="about-block">
+          <h3>Full Stack Developer</h3>
+          <p><strong>Henry</strong> (Graduado 2026)</p>
+          <p>
+            Formación intensiva de +800 horas en desarrollo web moderno,
+            arquitectura de software, metodologías ágiles y proyectos
+            reales colaborativos.
+          </p>
+        </div>
+
+        <div class="about-block">
+          <h3>AI Explorer: Ready to Discover AI</h3>
+          <p>
+            <strong>IBM SkillsBuild</strong>
+            (Certificado, Octubre 2026)
+          </p>
+          <p>
+            Formación especializada en fundamentos de Inteligencia
+            Artificial y pilares de IA ética: imparcialidad, privacidad,
+            explicabilidad y transparencia.
+          </p>
+        </div>
+
+        <div class="about-block">
+          <h3>Habilidades Profesionales & Trayectoria</h3>
+          <p>
+            <strong>Ventas, Logística & Atención al Cliente</strong>
+          </p>
+          <p>
+            Experiencia previa en roles interactivos (Uber, AutoExpress,
+            ventas y soporte). Desarrollé autonomía, organización,
+            capacidad de resolución de problemas bajo presión y
+            comunicación interpersonal.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CONTACTO -->
+    <section id="contacto">
+
+      <div class="contact">
+
+        <div class="section-label">04 / Contacto</div>
+        <h2>Conectemos</h2>
+
+        <p>
+          Si querés conocer más sobre mi trabajo o conversar sobre
+          una oportunidad laboral como Desarrollador Backend o Full Stack,
+          podés escribirme o llamarme directamente.
+        </p>
+
+    <div class="actions">
+
+  <!-- CORREO -->
+  <a
+    class="button secondary"
+    href="mailto:spataro787@gmail.com"
+    aria-label="Enviar correo electrónico"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+    >
+      <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+      <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+    </svg>
+    spataro787@gmail.com ↗
+  </a>
+
+
+  <!-- WHATSAPP -->
+  <a
+    class="button secondary"
+    href="https://wa.me/5493512309202?text=Hola%20Agust%C3%ADn,%20vi%20tu%20portfolio%20y%20me%20gustar%C3%ADa%20contactarte."
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Contactar por WhatsApp"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden="true"
+    >
+      <path d="M20.52 3.48A11.8 11.8 0 0 0 12.08 0C5.5 0 .15 5.35.15 11.93c0 2.1.55 4.15 1.6 5.96L.05 24l6.27-1.64a11.9 11.9 0 0 0 5.76 1.47h.01c6.58 0 11.93-5.35 11.93-11.93 0-3.19-1.24-6.19-3.5-8.42ZM12.08 21.8a9.9 9.9 0 0 1-5.05-1.38l-.36-.21-3.72.97.99-3.63-.24-.37a9.85 9.85 0 0 1-1.52-5.25c0-5.47 4.45-9.92 9.92-9.92 2.65 0 5.14 1.03 7.01 2.91a9.86 9.86 0 0 1 2.91 7.01c0 5.47-4.45 9.92-9.92 9.92Zm5.44-7.43c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.47-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.48-.5-.67-.51l-.57-.01c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.2 5.09 4.49.71.31 1.27.5 1.7.64.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.08-.13-.27-.2-.57-.35Z"/>
+    </svg>
+    
+
+     54 9 3512309202 ↗
+  </a>
+
+
+  <!-- LINKEDIN -->
+  <a
+    class="button secondary"
+    href="https://www.linkedin.com/in/agustin-spataro-dev/"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Perfil de LinkedIn"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden="true"
+    >
+      <path d="M20.45 2H3.55C2.69 2 2 2.68 2 3.52v16.96c0 .84.69 1.52 1.55 1.52h16.9c.86 0 1.55-.68 1.55-1.52V3.52c0-.84-.69-1.52-1.55-1.52ZM8.08 18.34H5.13V9.01h2.95v9.33ZM6.6 7.74a1.71 1.71 0 1 1 0-3.42 1.71 1.71 0 0 1 0 3.42Zm11.74 10.6h-2.94v-4.54c0-1.08-.02-2.47-1.5-2.47-1.5 0-1.73 1.17-1.73 2.39v4.62H9.22V9.01h2.83v1.27h.04c.39-.73 1.36-1.5 2.8-1.5 2.99 0 3.55 1.97 3.55 4.53v5.03Z"/>
+    </svg>
+    
+  </a>
+
+
+  <!-- GITHUB -->
+  <a
+    class="button secondary"
+    href="https://github.com/spataro787"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Perfil de GitHub"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden="true"
+    >
+      <path d="M12 .8a11.2 11.2 0 0 0-3.54 21.83c.56.1.77-.24.77-.54v-2.1c-3.14.68-3.8-1.33-3.8-1.33-.5-1.28-1.22-1.62-1.22-1.62-1.02-.7.08-.69.08-.69 1.13.08 1.72 1.16 1.72 1.16 1 .1.77 2.06 3.04 1.48.1-.72.4-1.21.7-1.49-2.5-.28-5.13-1.25-5.13-5.56 0-1.23.44-2.23 1.16-3.02-.12-.28-.5-1.43.11-2.98 0 0 .95-.3 3.08 1.15a10.7 10.7 0 0 1 5.6 0c2.13-1.45 3.08-1.15 3.08-1.15.61 1.55.23 2.7.11 2.98.72.79 1.16 1.79 1.16 3.02 0 4.32-2.63 5.28-5.14 5.56.4.35.75 1.03.75 2.08v3.09c0 .3.2.65.78.54A11.2 11.2 0 0 0 12 .8Z"/>
+    </svg>
+     
+  </a>
+
+</div>
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="wrap">
+
+    <div>
+      © 2026 Agustín Spataro. Todos los derechos reservados.
+    </div>
+
+    <div class="footer-social">
+
+  <!-- INSTAGRAM -->
+  <a
+    href="https://www.instagram.com/spataroagustin/?hl=es"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Visitar mi perfil de Instagram"
+    title="Instagram"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+    >
+      <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+      <circle cx="12" cy="12" r="4"></circle>
+      <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"></circle>
+    </svg>
+  </a>
+
+  <!-- FACEBOOK -->
+  <a
+    href="https://www.facebook.com/agustin.spataro/"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Visitar mi perfil de Facebook"
+    title="Facebook"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden="true"
+    >
+      <path d="M13.5 21v-8h2.7l.4-3.1h-3.1V8c0-.9.3-1.5 1.6-1.5h1.7V3.7c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2H7.3V13h2.8v8h3.4z"></path>
+    </svg>
+  </a>
+
+</div>
+
+  </footer>
+
+
+  <!-- CAMBIO DE TEMA -->
+  <script>
+    const themeToggle = document.getElementById("theme-toggle");
+    const root = document.documentElement;
+    const themeMeta = document.querySelector('meta[name="theme-color"]');
+
+    function updateThemeButton() {
+      const isLight = root.classList.contains("light-mode");
+
+      // El ícono indica el tema al que se puede cambiar.
+      themeToggle.textContent = isLight ? "🌙" : "☀️";
+
+      themeToggle.setAttribute(
+        "aria-label",
+        isLight
+          ? "Cambiar a modo oscuro"
+          : "Cambiar a modo claro"
+      );
+
+      themeToggle.setAttribute(
+        "aria-pressed",
+        String(isLight)
+      );
+
+      if (themeMeta) {
+        themeMeta.setAttribute(
+          "content",
+          isLight ? "#fdf8f5" : "#10131b"
+        );
+      }
+    }
+
+    if (themeToggle) {
+      updateThemeButton();
+
+      themeToggle.addEventListener("click", () => {
+        const isLight = root.classList.toggle("light-mode");
+
+        try {
+          localStorage.setItem(
+            "theme",
+            isLight ? "light" : "dark"
+          );
+        } catch (error) {
+          console.warn("No se pudo guardar la preferencia de tema.");
+        }
+
+        updateThemeButton();
+      });
+    }
+  </script>
+
+</body>
 </html>

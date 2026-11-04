@@ -3,6 +3,10 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "dev": "live-server",
     "test": "node --test"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2"
   }
 }
